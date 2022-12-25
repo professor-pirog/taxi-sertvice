@@ -29,12 +29,13 @@ public class RegistrationServlet extends HttpServlet {
         List<String> errors = new ArrayList<>();
         String login = req.getParameter(FormFields.LOGIN);
         String password = req.getParameter(FormFields.PASSWORD);
+        String confirmedPassword = req.getParameter(FormFields.CONFIRM_PASSWORD);
         String surname = req.getParameter(FormFields.SURNAME);
         String lastname = req.getParameter(FormFields.LASTNAME);
         String phone = req.getParameter(FormFields.PHONE);
         String email = req.getParameter(FormFields.EMAIL);
         ValidationUtils.validateLogin(errors, login);
-        ValidationUtils.validatePassword(errors, password);
+        ValidationUtils.validatePassword(errors, password, confirmedPassword);
         ValidationUtils.validateSurname(errors, surname);
         ValidationUtils.validateLastName(errors, lastname);
         ValidationUtils.validatePhone(errors, phone);
@@ -51,9 +52,10 @@ public class RegistrationServlet extends HttpServlet {
             }
         }
         if (errors.isEmpty()) {
-            req.getSession().setAttribute("user", user);
+            req.getSession().setAttribute("currentUser", user);
             resp.sendRedirect(req.getContextPath() + "/ordering");
         } else {
+            req.getSession().setAttribute("user", user);
             RequestDispatcher dispatcher = req.getRequestDispatcher("/jsp/registration.jsp");
             req.setAttribute("errors", errors);
             dispatcher.forward(req, resp);
@@ -63,6 +65,8 @@ public class RegistrationServlet extends HttpServlet {
     private static class FormFields {
         private static final String LOGIN = "login";
         private static final String PASSWORD = "password";
+
+        private static final String CONFIRM_PASSWORD = "confirmPassword";
         private static final String SURNAME = "surname";
         private static final String LASTNAME = "lastname";
         private static final String PHONE = "phone";

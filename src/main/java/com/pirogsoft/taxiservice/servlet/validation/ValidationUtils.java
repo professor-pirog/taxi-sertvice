@@ -36,8 +36,13 @@ public class ValidationUtils {
         ValidationUtils.validateMandatory(errors, value, "login");
     }
 
-    public static void validatePassword(List<String> errors, String value) {
-        ValidationUtils.validateMandatory(errors, value, "password");
+    public static void validatePassword(List<String> errors, String password, String confirmedPassword) {
+        ValidationUtils.validateMandatory(errors, password, "password");
+        ValidationUtils.validateMandatory(errors, password, "confirm password");
+        if (!StringUtils.isEmptyOrNull(password) && !StringUtils.isEmptyOrNull(confirmedPassword)
+                && !password.equals(confirmedPassword)) {
+            errors.add("Passwords not match");
+        }
         //TODO: maybe some additional validation
     }
 

@@ -7,11 +7,12 @@
 <body>
 <h2>Login</h2>
 <div>
+    <%--@elvariable id="user" type="com.pirogsoft.taxiservice.model.User"--%>
     <form action="registration" method="post">
         <div>
             <label>
                 login:
-                <input type="text" name="login">
+                <input type="text" name="login" value="${user.login}">
             </label>
         </div>
         <div>
@@ -22,26 +23,32 @@
         </div>
         <div>
             <label>
+                confirm password:
+                <input type="password" name="confirmPassword">
+            </label>
+        </div>
+        <div>
+            <label>
                 surname:
-                <input type="text" name="surname">
+                <input type="text" name="surname" value="${user.surname}">
             </label>
         </div>
         <div>
             <label>
                 lastname:
-                <input type="text" name="lastname">
+                <input type="text" name="lastname" value="${user.lastname}">
             </label>
         </div>
         <div>
             <label>
                 phone:
-                <input type="text" name="phone">
+                <input type="text" name="phone" value="${user.phone}">
             </label>
         </div>
         <div>
             <label>
                 email:
-                <input type="text" name="email">
+                <input type="text" name="email" value="${user.email}">
             </label>
         </div>
         <button>Register</button>

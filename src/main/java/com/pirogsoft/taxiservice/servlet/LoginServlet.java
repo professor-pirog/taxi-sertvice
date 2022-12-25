@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
             }
         }
         if (errors.isEmpty()) {
-            req.getSession().setAttribute("user", userOptional.get());
+            req.getSession().setAttribute("currentUser", userOptional.get());
             resp.sendRedirect(req.getContextPath() + "/ordering");
         } else {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");
