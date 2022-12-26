@@ -2,7 +2,7 @@ package com.pirogsoft.taxiservice;
 
 import com.pirogsoft.taxiservice.repository.user.UserMemoryRepositoryImpl;
 import com.pirogsoft.taxiservice.repository.user.UserRepository;
-import com.pirogsoft.taxiservice.service.login.UserService;
+import com.pirogsoft.taxiservice.service.UserService;
 
 public class DependencyProvider {
 

@@ -3,7 +3,7 @@ package com.pirogsoft.taxiservice.servlet;
 import com.pirogsoft.taxiservice.DependencyProvider;
 import com.pirogsoft.taxiservice.exception.UserAlreadyExistException;
 import com.pirogsoft.taxiservice.model.User;
-import com.pirogsoft.taxiservice.service.login.UserService;
+import com.pirogsoft.taxiservice.service.UserService;
 import com.pirogsoft.taxiservice.servlet.validation.ValidationUtils;
 
 import javax.servlet.RequestDispatcher;

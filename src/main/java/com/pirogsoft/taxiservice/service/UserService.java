@@ -1,4 +1,4 @@
-package com.pirogsoft.taxiservice.service.login;
+package com.pirogsoft.taxiservice.service;
 
 import com.pirogsoft.taxiservice.DependencyProvider;
 import com.pirogsoft.taxiservice.model.Role;
