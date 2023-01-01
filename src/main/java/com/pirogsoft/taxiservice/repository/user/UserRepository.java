@@ -1,6 +1,6 @@
 package com.pirogsoft.taxiservice.repository.user;
 
-import com.pirogsoft.taxiservice.model.User;
+import com.pirogsoft.taxiservice.model.user.User;
 
 import java.util.Optional;
 

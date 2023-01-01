@@ -1,5 +1,7 @@
 package com.pirogsoft.taxiservice.filter;
 
+import com.pirogsoft.taxiservice.web.SessionAttributes;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +18,7 @@ public class AuthenticationFilter implements Filter {
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        if (httpRequest.getSession().getAttribute("currentUser") != null) {
+        if (httpRequest.getSession().getAttribute(SessionAttributes.CURRENT_USER) != null) {
             chain.doFilter(request, response);
         } else {
             httpResponse.setStatus(401);

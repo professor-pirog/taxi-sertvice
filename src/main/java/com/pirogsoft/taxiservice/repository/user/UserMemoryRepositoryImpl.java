@@ -1,8 +1,8 @@
 package com.pirogsoft.taxiservice.repository.user;
 
 import com.pirogsoft.taxiservice.exception.UserAlreadyExistException;
-import com.pirogsoft.taxiservice.model.Role;
-import com.pirogsoft.taxiservice.model.User;
+import com.pirogsoft.taxiservice.model.user.Role;
+import com.pirogsoft.taxiservice.model.user.User;
 
 import java.util.ArrayList;
 import java.util.List;

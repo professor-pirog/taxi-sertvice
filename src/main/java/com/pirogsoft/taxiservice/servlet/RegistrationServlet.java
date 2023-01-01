@@ -1,8 +1,8 @@
 package com.pirogsoft.taxiservice.servlet;
 
-import com.pirogsoft.taxiservice.DependencyProvider;
+import com.pirogsoft.taxiservice.ComponentContainer;
 import com.pirogsoft.taxiservice.exception.UserAlreadyExistException;
-import com.pirogsoft.taxiservice.model.User;
+import com.pirogsoft.taxiservice.model.user.User;
 import com.pirogsoft.taxiservice.service.UserService;
 import com.pirogsoft.taxiservice.servlet.validation.ValidationUtils;
 
@@ -15,8 +15,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.pirogsoft.taxiservice.web.SessionAttributes.CURRENT_USER;
+
 public class RegistrationServlet extends HttpServlet {
-    private final UserService userService = DependencyProvider.getInstance().getUserService();
+    private final UserService userService = ComponentContainer.getInstance().getUserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +32,7 @@ public class RegistrationServlet extends HttpServlet {
         String login = req.getParameter(FormFields.LOGIN);
         String password = req.getParameter(FormFields.PASSWORD);
         String confirmedPassword = req.getParameter(FormFields.CONFIRM_PASSWORD);
-        String surname = req.getParameter(FormFields.SURNAME);
+        String surname = req.getParameter(FormFields.SURNAME);//TODO: fix UTF-8
         String lastname = req.getParameter(FormFields.LASTNAME);
         String phone = req.getParameter(FormFields.PHONE);
         String email = req.getParameter(FormFields.EMAIL);
@@ -52,7 +54,7 @@ public class RegistrationServlet extends HttpServlet {
             }
         }
         if (errors.isEmpty()) {
-            req.getSession().setAttribute("currentUser", user);
+            req.getSession().setAttribute(CURRENT_USER, user);
             resp.sendRedirect(req.getContextPath() + "/ordering");
         } else {
             req.getSession().setAttribute("user", user);
@@ -65,7 +67,6 @@ public class RegistrationServlet extends HttpServlet {
     private static class FormFields {
         private static final String LOGIN = "login";
         private static final String PASSWORD = "password";
-
         private static final String CONFIRM_PASSWORD = "confirmPassword";
         private static final String SURNAME = "surname";
         private static final String LASTNAME = "lastname";

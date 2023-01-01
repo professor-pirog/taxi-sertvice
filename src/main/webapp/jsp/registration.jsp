@@ -1,5 +1,6 @@
 <%@ page isELIgnored="false" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <html>
 <head>
     <title>Welcome</title>
@@ -7,7 +8,7 @@
 <body>
 <h2>Login</h2>
 <div>
-    <%--@elvariable id="user" type="com.pirogsoft.taxiservice.model.User"--%>
+    <%--@elvariable id="user" type="com.pirogsoft.taxiservice.model.user.User"--%>
     <form action="registration" method="post">
         <div>
             <label>

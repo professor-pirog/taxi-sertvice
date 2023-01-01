@@ -1,7 +1,7 @@
 package com.pirogsoft.taxiservice.servlet;
 
-import com.pirogsoft.taxiservice.DependencyProvider;
-import com.pirogsoft.taxiservice.model.User;
+import com.pirogsoft.taxiservice.ComponentContainer;
+import com.pirogsoft.taxiservice.model.user.User;
 import com.pirogsoft.taxiservice.service.UserService;
 import com.pirogsoft.taxiservice.servlet.validation.ValidationUtils;
 
@@ -15,8 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import static com.pirogsoft.taxiservice.web.SessionAttributes.CURRENT_USER;
+
 public class LoginServlet extends HttpServlet {
-    private final UserService userService = DependencyProvider.getInstance().getUserService();
+    private final UserService userService = ComponentContainer.getInstance().getUserService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             }
         }
         if (errors.isEmpty()) {
-            req.getSession().setAttribute("currentUser", userOptional.get());
+            req.getSession().setAttribute(CURRENT_USER, userOptional.get());
             resp.sendRedirect(req.getContextPath() + "/ordering");
         } else {
             RequestDispatcher dispatcher = req.getRequestDispatcher("/index.jsp");

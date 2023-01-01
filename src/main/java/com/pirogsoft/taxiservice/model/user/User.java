@@ -1,4 +1,4 @@
-package com.pirogsoft.taxiservice.model;
+package com.pirogsoft.taxiservice.model.user;
 
 import java.util.HashSet;
 import java.util.Set;
