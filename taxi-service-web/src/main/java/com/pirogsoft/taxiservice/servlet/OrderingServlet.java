@@ -1,6 +1,6 @@
 package com.pirogsoft.taxiservice.servlet;
 
-import com.pirogsoft.taxiservice.ComponentContainer;
+import com.pirogsoft.taxiservice.ComponentsContainer;
 import com.pirogsoft.taxiservice.model.NewTripInfo;
 import com.pirogsoft.taxiservice.model.car.Category;
 import com.pirogsoft.taxiservice.model.trip.AddressPoint;
@@ -22,7 +22,7 @@ import java.util.Optional;
 
 public class OrderingServlet extends HttpServlet {
 
-    private final OrderingService orderingService = ComponentContainer.getInstance().getOrderingService();
+    private final OrderingService orderingService = ComponentsContainer.getInstance().getOrderingService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

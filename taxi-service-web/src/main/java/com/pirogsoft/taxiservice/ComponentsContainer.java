@@ -13,9 +13,9 @@ import com.pirogsoft.taxiservice.service.price.PriceStrategy;
 import com.pirogsoft.taxiservice.transaction.EmptyTransactionManager;
 import com.pirogsoft.taxiservice.transaction.TransactionManager;
 
-public class ComponentContainer {
+public class ComponentsContainer {
 
-    private static ComponentContainer instance;
+    private static ComponentsContainer instance;
 
     private UserService userService;
 
@@ -31,12 +31,12 @@ public class ComponentContainer {
 
     private TripOrderRepository tripOrderRepository;
 
-    private ComponentContainer() {
+    private ComponentsContainer() {
     }
 
-    public static synchronized ComponentContainer getInstance() {
+    public static synchronized ComponentsContainer getInstance() {
         if (instance == null) {
-            instance = new ComponentContainer();
+            instance = new ComponentsContainer();
         }
         return instance;
     }

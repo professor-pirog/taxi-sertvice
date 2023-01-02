@@ -1,6 +1,6 @@
 package com.pirogsoft.taxiservice.servlet;
 
-import com.pirogsoft.taxiservice.ComponentContainer;
+import com.pirogsoft.taxiservice.ComponentsContainer;
 import com.pirogsoft.taxiservice.exception.UserAlreadyExistException;
 import com.pirogsoft.taxiservice.model.user.User;
 import com.pirogsoft.taxiservice.service.UserService;
@@ -18,7 +18,7 @@ import java.util.List;
 import static com.pirogsoft.taxiservice.web.SessionAttributes.CURRENT_USER;
 
 public class RegistrationServlet extends HttpServlet {
-    private final UserService userService = ComponentContainer.getInstance().getUserService();
+    private final UserService userService = ComponentsContainer.getInstance().getUserService();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
