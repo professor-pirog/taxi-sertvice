@@ -9,6 +9,7 @@
         <module>taxi-service-data</module>
         <module>taxi-service-domain</module>
         <module>taxi-service-web</module>
+        <module>taxi-service-utils</module>
     </modules>
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
@@ -30,6 +31,11 @@
             <dependency>
                 <groupId>com.pirogsoft</groupId>
                 <artifactId>taxi-service-domain</artifactId>
+                <version>${taxi-service.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pirogsoft</groupId>
+                <artifactId>taxi-service-utils</artifactId>
                 <version>${taxi-service.version}</version>
             </dependency>
             <dependency>

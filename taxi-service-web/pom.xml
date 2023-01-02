@@ -23,6 +23,10 @@
             <artifactId>taxi-service-domain</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.pirogsoft</groupId>
+            <artifactId>taxi-service-utils</artifactId>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
         </dependency>
