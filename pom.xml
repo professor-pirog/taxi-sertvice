@@ -13,6 +13,10 @@
     <properties>
         <maven.compiler.source>18</maven.compiler.source>
         <maven.compiler.target>18</maven.compiler.target>
+        <taxi-service.version>1.0-SNAPSHOT</taxi-service.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
+        <jstl.version>1.2</jstl.version>
     </properties>
     <name>taxi-sertvice Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -21,29 +25,29 @@
             <dependency>
                 <groupId>com.pirogsoft</groupId>
                 <artifactId>taxi-service-data</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${taxi-service.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.pirogsoft</groupId>
                 <artifactId>taxi-service-domain</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${taxi-service.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.1.0</version>
+                <version>${javax.servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.servlet.jsp</groupId>
                 <artifactId>javax.servlet.jsp-api</artifactId>
-                <version>2.3.1</version>
+                <version>${javax.servlet.jsp-api.version}</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
-                <version>1.2</version>
+                <version>${jstl.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
