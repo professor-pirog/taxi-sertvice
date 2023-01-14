@@ -12,15 +12,14 @@
         <module>taxi-service-utils</module>
     </modules>
     <properties>
-        <maven.compiler.source>18</maven.compiler.source>
-        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <taxi-service.version>1.0-SNAPSHOT</taxi-service.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
         <javax.servlet.jsp-api.version>2.3.1</javax.servlet.jsp-api.version>
         <jstl.version>1.2</jstl.version>
     </properties>
-    <name>taxi-sertvice Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+    <name>taxi-service Maven Webapp</name>
     <dependencyManagement>
         <dependencies>
             <dependency>
